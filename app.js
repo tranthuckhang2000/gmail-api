@@ -2,10 +2,10 @@ const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 
 // These id's and secrets should come from .env file.
-const CLIENT_ID = 'YOUR CLIENT ID';
-const CLEINT_SECRET = 'YOUR CLIENT SECRET';
+const CLIENT_ID = '603179577333-9et4p2efmq22ro7djq520c0p544ikndh.apps.googleusercontent.com';
+const CLEINT_SECRET = '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';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN = 'YOUR REFRESH TOKEN';
+const REFRESH_TOKEN = '1//04DW_o9f53bmvCgYIARAAGAQSNwF-L9IrzlGe-9kjMt2XoZ_rYUesWM1RozqEgrLUuss2URa0syXdPkXYVZDLBHXjGsgXPaTrkro';
 
 const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
@@ -22,7 +22,7 @@ async function sendMail() {
       service: 'gmail',
       auth: {
         type: 'OAuth2',
-        user: 'yours authorised email address',
+        user: 'khangtran0944@gmail.com',
         clientId: CLIENT_ID,
         clientSecret: CLEINT_SECRET,
         refreshToken: REFRESH_TOKEN,
@@ -31,8 +31,8 @@ async function sendMail() {
     });
 
     const mailOptions = {
-      from: 'SENDER NAME <yours authorised email address@gmail.com>',
-      to: 'to email address here',
+      from: 'SENDER NAME <khangtran0944@gmail.com>',
+      to: '18130104@st.hcmuaf.edu.vn',
       subject: 'Hello from gmail using API',
       text: 'Hello from gmail email using API',
       html: '<h1>Hello from gmail email using API</h1>',
